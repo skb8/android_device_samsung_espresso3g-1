@@ -1,0 +1,17 @@
+diff --git a/BoardConfigCustom.mk b/BoardConfigCustom.mk
+index 4baa4c5..8894396 100644
+--- a/BoardConfigCustom.mk
++++ b/BoardConfigCustom.mk
+@@ -3,8 +3,10 @@ WITH_LINEAGE_CHARGER := false
+ BOARD_CHARGER_SHOW_PERCENTAGE := true
+ BOARD_NO_CHARGER_LED := true
+ 
+-# Disable dex-preoptimization
+-WITH_DEXPREOPT := false
++# Android 13 requires preoptimization for user/userdebug builds.
++# Limit bring-up to the boot image and system server to reduce build work.
++WITH_DEXPREOPT := true
++WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+ 
+ # F2FS filesystem
+ TARGET_USERIMAGES_USE_F2FS := true

@@ -72,6 +72,12 @@ dumpvars и остановился на `BOARD_USE_TI_LIBION: export is obsolete
 Сообщение roomservice `Device espresso3g not found` после этой ошибки было
 следствием неуспешного dumpvars, а не отсутствующего device tree.
 
+Следующий пользовательский запуск остановился на обязательном DEXPREOPT для
+userdebug. Патч 0003 включает WITH_DEXPREOPT и ограничивает предкомпиляцию boot
+image и system server. Это поддерживаемый конфигурацией Android 13 режим;
+полная предкомпиляция приложений на этапе bring-up не включается. Применение
+патча проверено, Android dumpvars после него ожидается на машине пользователя.
+
 1. Общий espressowifi и TI hardware пока из Android 9. Проверить/обновить
    пакеты, include-пути, HAL, XML audio policy, VINTF и SELinux.
 2. PowerVR: gralloc, HWC, EGL/GLES и синхронизация буферов. Exynos/Mali от S2
