@@ -1,0 +1,12 @@
+diff --git a/Android.bp b/Android.bp
+index 5ac1791..92e5642 100644
+--- a/Android.bp
++++ b/Android.bp
+@@ -143,6 +143,7 @@ unbundled_visibility = [
+     "//cts/tests/tests/keystore",
+     "//external/conscrypt",
+     "//external/okhttp",
++    "//external/robolectric:__subpackages__",
+     "//external/robolectric-shadows",
+     "//external/robolectric-shadows/robolectric",
+     "//external/robolectric-shadows/shadows/supportv4",

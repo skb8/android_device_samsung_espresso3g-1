@@ -1,0 +1,778 @@
+diff --git a/current.txt b/current.txt
+new file mode 100644
+index 0000000..4b804c6
+--- /dev/null
++++ b/current.txt
+@@ -0,0 +1,31 @@
++3f10a20f2c040621554f909359fb6ead3102e009600803f0e6131d676b505a5f vendor.lineage.camera.motor@1.0::ICameraMotor
++9632cd2e5268a185483234f660bd7fdfc99b9c3684d3a28f7fffd4a5b1e95afc vendor.lineage.fastcharge@1.0::IFastCharge
++8dd63c1acda6a1b08076d601848ce19b550079a01abaf925b39fbd8e88f5831f vendor.lineage.livedisplay@2.0::types
++897294c2e66cc92496b2c098c0a2faf7cb7837f6ba314bbb080631481c1e48bb vendor.lineage.livedisplay@2.0::IAdaptiveBacklight
++607c4b98485affea90eaf80e02f842d4b5df818302db6e0650de7c35e8a03af3 vendor.lineage.livedisplay@2.0::IAutoContrast
++2eaca8a5ea22bcec2eb6a032a5c63e62cde4ae256af0595ecad34b6a5b6f698b vendor.lineage.livedisplay@2.0::IColorBalance
++c521912d1c22064a16495e90625a42f61d68a03ef9117f5bc6b1788b44b6fa9c vendor.lineage.livedisplay@2.0::IColorEnhancement
++84065111b51ac2977a5cae57687d2022f3816acc4c9f039fdacfed604fa8050d vendor.lineage.livedisplay@2.0::IDisplayColorCalibration
++4ccc2ac2e1eb117932900cc35ed90891f90e9cf1e129451984283652b3d7c747 vendor.lineage.livedisplay@2.0::IDisplayModes
++2ac7d0fc55d91ba7931eedf973ac182ead751af56fb10629d08dadd28e7cd4c9 vendor.lineage.livedisplay@2.0::IPictureAdjustment
++12f43451269ba6e9c358a8dd33c77dd88483c2c87dc7e9640f7dbb1fc73ffc6a vendor.lineage.livedisplay@2.0::IReadingEnhancement
++cc02ba474b73de7d794f5c22c32c54a7b8fb17a1b84722120d838e23deb51e36 vendor.lineage.livedisplay@2.0::ISunlightEnhancement
++a27e85a38aad011d598ef7b11f110545dd03c9d08f58419ea41d8ab501cdb2bc vendor.lineage.livedisplay@2.1::IAdaptiveBacklight
++646ac03afc6091125bfb0862524073ba2fd1477611925962ac0d3a03a4178755 vendor.lineage.livedisplay@2.1::IAntiFlicker
++f28c29705a9ed1d37e964b9d86f46092cd8c06cde478f850775735973a7e3ad8 vendor.lineage.livedisplay@2.1::IAutoContrast
++5c1d35401568d6723d0b53c85cb1e6e84cea64053451c4dff17e59f4a13a52d5 vendor.lineage.livedisplay@2.1::IColorBalance
++a651adf29fe0f4f3467c09f4dd9c4c87fcd34ab261332ff4cc12bad7ace6efe9 vendor.lineage.livedisplay@2.1::IColorEnhancement
++f9de5c3b5c2f6a0af4e4efd7cda836108fab62dd6bc458547ce99805bf626466 vendor.lineage.livedisplay@2.1::IDisplayColorCalibration
++230ec5a6850d8a4403365979d2adcffc45f1b5f7060b92f7e98f0547eecf479a vendor.lineage.livedisplay@2.1::IDisplayModes
++525994d12800a70e1287957e13e601c8c21f138cd6e3f136631f6e652a84ed62 vendor.lineage.livedisplay@2.1::IPictureAdjustment
++1e2270eb7496e2ee20e65dc7cda442d62b6ab5401f801fa87c002929b5821423 vendor.lineage.livedisplay@2.1::IReadingEnhancement
++194b96a2ad8d1798f002f04f1667d06982421d71a29e91f87db571b712412a68 vendor.lineage.livedisplay@2.1::ISunlightEnhancement
++eff9f894bd89c0a3e3eabfe3ee9765e2e6d1e4ebc29f969666f9832c3b1b5a27 vendor.lineage.powershare@1.0::IPowerShare
++fb1ecf02a3c58e94df8458bc63cc8c5628a087810fa93dea6ec3da195b2d2b74 vendor.lineage.touch@1.0::types
++ef5cde250166a8d2d82e3ff538800308eb1f4fe1c0a43c60d1501a690a20ede3 vendor.lineage.touch@1.0::IGloveMode
++503a191eb5cd02ee50759284e59056588373061fdcfb95a52755ac91b86b022d vendor.lineage.touch@1.0::IHighTouchPollingRate
++e0e15b172508719a1a168e5730d0defedfa7e66c61c4e8e5d3042c2102770e9d vendor.lineage.touch@1.0::IKeyDisabler
++d095c56376a08365766a63c8d2a6116c793facf336e68591edb5e52d64d6ab06 vendor.lineage.touch@1.0::IKeySwapper
++56460e7cca6d2fff08b4d6e3ff0d5d094e8e6daa1200718d283256eed1a792e9 vendor.lineage.touch@1.0::IStylusMode
++5b85c1e1a88b5a020b1e14d306eb62792bac181b1acce7cca1b39486b951a4ba vendor.lineage.touch@1.0::ITouchscreenGesture
++cd72ffad7e1fd50837d72c87126bf4464ac273230d1c574cc47bfb10d28124e7 vendor.lineage.trust@1.0::IUsbRestrict
+diff --git a/health/aidl/Android.bp b/health/aidl/Android.bp
+new file mode 100644
+index 0000000..b2e7ded
+--- /dev/null
++++ b/health/aidl/Android.bp
+@@ -0,0 +1,28 @@
++/*
++ * Copyright (C) 2022-2023 The LineageOS Project
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ */
++
++aidl_interface {
++    name: "vendor.lineage.health",
++    vendor_available: true,
++    srcs: ["vendor/lineage/health/*.aidl"],
++    stability: "vintf",
++    owner: "lineage",
++
++    backend: {
++        cpp: {
++            enabled: false,
++        },
++        java: {
++            sdk_version: "module_current",
++        },
++    },
++    versions_with_info: [
++        {
++            version: "1",
++            imports: [],
++        },
++    ],
++}
+diff --git a/health/aidl/aidl_api/vendor.lineage.health/1/.hash b/health/aidl/aidl_api/vendor.lineage.health/1/.hash
+new file mode 100644
+index 0000000..79798d8
+--- /dev/null
++++ b/health/aidl/aidl_api/vendor.lineage.health/1/.hash
+@@ -0,0 +1 @@
++33fe8d162b07b2c4b66feccb70a5e45628e9e241
+diff --git a/health/aidl/aidl_api/vendor.lineage.health/1/vendor/lineage/health/ChargingControlSupportedMode.aidl b/health/aidl/aidl_api/vendor.lineage.health/1/vendor/lineage/health/ChargingControlSupportedMode.aidl
+new file mode 100644
+index 0000000..b19e2cd
+--- /dev/null
++++ b/health/aidl/aidl_api/vendor.lineage.health/1/vendor/lineage/health/ChargingControlSupportedMode.aidl
+@@ -0,0 +1,30 @@
++/*
++ * Copyright (C) 2022-2023 The LineageOS Project
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ */
++///////////////////////////////////////////////////////////////////////////////
++// THIS FILE IS IMMUTABLE. DO NOT EDIT IN ANY CASE.                          //
++///////////////////////////////////////////////////////////////////////////////
++
++// This file is a snapshot of an AIDL file. Do not edit it manually. There are
++// two cases:
++// 1). this is a frozen version file - do not edit this in any case.
++// 2). this is a 'current' file. If you make a backwards compatible change to
++//     the interface (from the latest frozen version), the build system will
++//     prompt you to update this file with `m <name>-update-api`.
++//
++// You must not make a backward incompatible change to any AIDL file built
++// with the aidl_interface module type with versions property set. The module
++// type is used to build AIDL files in a way that they can be used across
++// independently updatable components of the system. If a device is shipped
++// with such a backward incompatible change, it has a high risk of breaking
++// later when a module using the interface is updated, e.g., Mainline modules.
++
++package vendor.lineage.health;
++@Backing(type="int") @VintfStability
++enum ChargingControlSupportedMode {
++  TOGGLE = 1,
++  BYPASS = 2,
++  DEADLINE = 4,
++}
+diff --git a/health/aidl/aidl_api/vendor.lineage.health/1/vendor/lineage/health/IChargingControl.aidl b/health/aidl/aidl_api/vendor.lineage.health/1/vendor/lineage/health/IChargingControl.aidl
+new file mode 100644
+index 0000000..4ea51ab
+--- /dev/null
++++ b/health/aidl/aidl_api/vendor.lineage.health/1/vendor/lineage/health/IChargingControl.aidl
+@@ -0,0 +1,31 @@
++/*
++ * Copyright (C) 2022-2023 The LineageOS Project
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ */
++///////////////////////////////////////////////////////////////////////////////
++// THIS FILE IS IMMUTABLE. DO NOT EDIT IN ANY CASE.                          //
++///////////////////////////////////////////////////////////////////////////////
++
++// This file is a snapshot of an AIDL file. Do not edit it manually. There are
++// two cases:
++// 1). this is a frozen version file - do not edit this in any case.
++// 2). this is a 'current' file. If you make a backwards compatible change to
++//     the interface (from the latest frozen version), the build system will
++//     prompt you to update this file with `m <name>-update-api`.
++//
++// You must not make a backward incompatible change to any AIDL file built
++// with the aidl_interface module type with versions property set. The module
++// type is used to build AIDL files in a way that they can be used across
++// independently updatable components of the system. If a device is shipped
++// with such a backward incompatible change, it has a high risk of breaking
++// later when a module using the interface is updated, e.g., Mainline modules.
++
++package vendor.lineage.health;
++@VintfStability
++interface IChargingControl {
++  boolean getChargingEnabled();
++  void setChargingEnabled(in boolean enabled);
++  void setChargingDeadline(in long deadline);
++  int getSupportedMode();
++}
+diff --git a/health/aidl/aidl_api/vendor.lineage.health/current/vendor/lineage/health/ChargingControlSupportedMode.aidl b/health/aidl/aidl_api/vendor.lineage.health/current/vendor/lineage/health/ChargingControlSupportedMode.aidl
+new file mode 100644
+index 0000000..b19e2cd
+--- /dev/null
++++ b/health/aidl/aidl_api/vendor.lineage.health/current/vendor/lineage/health/ChargingControlSupportedMode.aidl
+@@ -0,0 +1,30 @@
++/*
++ * Copyright (C) 2022-2023 The LineageOS Project
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ */
++///////////////////////////////////////////////////////////////////////////////
++// THIS FILE IS IMMUTABLE. DO NOT EDIT IN ANY CASE.                          //
++///////////////////////////////////////////////////////////////////////////////
++
++// This file is a snapshot of an AIDL file. Do not edit it manually. There are
++// two cases:
++// 1). this is a frozen version file - do not edit this in any case.
++// 2). this is a 'current' file. If you make a backwards compatible change to
++//     the interface (from the latest frozen version), the build system will
++//     prompt you to update this file with `m <name>-update-api`.
++//
++// You must not make a backward incompatible change to any AIDL file built
++// with the aidl_interface module type with versions property set. The module
++// type is used to build AIDL files in a way that they can be used across
++// independently updatable components of the system. If a device is shipped
++// with such a backward incompatible change, it has a high risk of breaking
++// later when a module using the interface is updated, e.g., Mainline modules.
++
++package vendor.lineage.health;
++@Backing(type="int") @VintfStability
++enum ChargingControlSupportedMode {
++  TOGGLE = 1,
++  BYPASS = 2,
++  DEADLINE = 4,
++}
+diff --git a/health/aidl/aidl_api/vendor.lineage.health/current/vendor/lineage/health/IChargingControl.aidl b/health/aidl/aidl_api/vendor.lineage.health/current/vendor/lineage/health/IChargingControl.aidl
+new file mode 100644
+index 0000000..4ea51ab
+--- /dev/null
++++ b/health/aidl/aidl_api/vendor.lineage.health/current/vendor/lineage/health/IChargingControl.aidl
+@@ -0,0 +1,31 @@
++/*
++ * Copyright (C) 2022-2023 The LineageOS Project
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ */
++///////////////////////////////////////////////////////////////////////////////
++// THIS FILE IS IMMUTABLE. DO NOT EDIT IN ANY CASE.                          //
++///////////////////////////////////////////////////////////////////////////////
++
++// This file is a snapshot of an AIDL file. Do not edit it manually. There are
++// two cases:
++// 1). this is a frozen version file - do not edit this in any case.
++// 2). this is a 'current' file. If you make a backwards compatible change to
++//     the interface (from the latest frozen version), the build system will
++//     prompt you to update this file with `m <name>-update-api`.
++//
++// You must not make a backward incompatible change to any AIDL file built
++// with the aidl_interface module type with versions property set. The module
++// type is used to build AIDL files in a way that they can be used across
++// independently updatable components of the system. If a device is shipped
++// with such a backward incompatible change, it has a high risk of breaking
++// later when a module using the interface is updated, e.g., Mainline modules.
++
++package vendor.lineage.health;
++@VintfStability
++interface IChargingControl {
++  boolean getChargingEnabled();
++  void setChargingEnabled(in boolean enabled);
++  void setChargingDeadline(in long deadline);
++  int getSupportedMode();
++}
+diff --git a/health/aidl/default/.clang-format b/health/aidl/default/.clang-format
+new file mode 120000
+index 0000000..5e8e20b
+--- /dev/null
++++ b/health/aidl/default/.clang-format
+@@ -0,0 +1 @@
++../../../../../../build/soong/scripts/system-clang-format
+\ No newline at end of file
+diff --git a/health/aidl/default/Android.bp b/health/aidl/default/Android.bp
+new file mode 100644
+index 0000000..0b4f5cd
+--- /dev/null
++++ b/health/aidl/default/Android.bp
+@@ -0,0 +1,72 @@
++/*
++ * Copyright (C) 2022-2024 The LineageOS Project
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ */
++
++cc_defaults {
++    name: "android.hardware.health-service.batteryless-defaults",
++    relative_install_path: "hw",
++    vintf_fragments: ["android.hardware.health-service.batteryless.xml"],
++    vendor: true,
++    recovery_available: true,
++
++    defaults: [
++        "libhealth_aidl_impl_user",
++    ],
++
++    include_dirs: [
++        "system/core/healthd",
++        "system/core/healthd/include",
++        "system/core/healthd/include_charger"
++    ],
++
++    static_libs: [
++        "libhealth_aidl_impl",
++    ],
++
++    srcs: [
++        "service-batteryless.cpp",
++    ],
++
++    cflags: [
++        "-Wall",
++        "-Werror",
++    ],
++}
++
++cc_binary {
++    name: "android.hardware.health-service.batteryless",
++    recovery: false,
++    vendor: true,
++    defaults: ["android.hardware.health-service.batteryless-defaults"],
++    init_rc: ["android.hardware.health-service.batteryless.rc"],
++    overrides: ["charger"],
++}
++
++cc_binary {
++    name: "android.hardware.health-service.batteryless_recovery",
++    vendor: false,
++    recovery: true,
++    defaults: ["android.hardware.health-service.batteryless-defaults"],
++    init_rc: ["android.hardware.health-service.batteryless_recovery.rc"],
++    overrides: ["charger.recovery"],
++}
++
++cc_binary {
++    name: "vendor.lineage.health-service.default",
++    defaults: ["health_charging_control_defaults"],
++    vendor: true,
++    relative_install_path: "hw",
++    init_rc: ["vendor.lineage.health-service.default.rc"],
++    vintf_fragments: ["vendor.lineage.health-service.default.xml"],
++    srcs: [
++        "service.cpp",
++        "ChargingControl.cpp",
++    ],
++    shared_libs: [
++        "libbase",
++        "libbinder_ndk",
++        "vendor.lineage.health-V1-ndk",
++    ],
++}
+diff --git a/health/aidl/default/ChargingControl.cpp b/health/aidl/default/ChargingControl.cpp
+new file mode 100644
+index 0000000..4e12b29
+--- /dev/null
++++ b/health/aidl/default/ChargingControl.cpp
+@@ -0,0 +1,164 @@
++/*
++ * Copyright (C) 2022-2023 The LineageOS Project
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ */
++
++#include "ChargingControl.h"
++
++#include <android-base/file.h>
++#include <android-base/logging.h>
++#include <android-base/strings.h>
++#include <android/binder_status.h>
++#include <fstream>
++#include "android/binder_auto_utils.h"
++
++#define LOG_TAG "vendor.lineage.health-service.default"
++
++namespace aidl {
++namespace vendor {
++namespace lineage {
++namespace health {
++
++#ifdef HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE
++static const std::vector<ChargingEnabledNode> kChargingEnabledNodes = {
++        {HEALTH_CHARGING_CONTROL_CHARGING_PATH, HEALTH_CHARGING_CONTROL_CHARGING_ENABLED,
++         HEALTH_CHARGING_CONTROL_CHARGING_DISABLED},
++        {"/sys/class/power_supply/battery/battery_charging_enabled", "1", "0"},
++        {"/sys/class/power_supply/battery/charging_enabled", "1", "0"},
++        {"/sys/class/power_supply/battery/input_suspend", "0", "1"},
++        {"/sys/class/qcom-battery/input_suspend", "0", "1"},
++};
++
++ChargingControl::ChargingControl() : mChargingEnabledNode(nullptr) {
++    while (!mChargingEnabledNode) {
++        for (const auto& node : kChargingEnabledNodes) {
++            if (access(node.path.c_str(), R_OK | W_OK) == 0) {
++                mChargingEnabledNode = &node;
++                break;
++            }
++            PLOG(WARNING) << "Failed to access() file " << node.path;
++            usleep(100000);
++        }
++    }
++}
++
++ndk::ScopedAStatus ChargingControl::getChargingEnabled(bool* _aidl_return) {
++    std::string content;
++    if (!android::base::ReadFileToString(mChargingEnabledNode->path, &content, true)) {
++        LOG(ERROR) << "Failed to read current charging enabled value";
++        return ndk::ScopedAStatus::fromExceptionCode(EX_ILLEGAL_STATE);
++    }
++
++    content = android::base::Trim(content);
++
++    if (content == mChargingEnabledNode->value_true) {
++        *_aidl_return = true;
++    } else if (content == mChargingEnabledNode->value_false) {
++        *_aidl_return = false;
++    } else {
++        LOG(ERROR) << "Unknown value " << content;
++        return ndk::ScopedAStatus::fromExceptionCode(EX_ILLEGAL_STATE);
++    }
++
++    return ndk::ScopedAStatus::ok();
++}
++
++ndk::ScopedAStatus ChargingControl::setChargingEnabled(bool enabled) {
++    const auto& value =
++            enabled ? mChargingEnabledNode->value_true : mChargingEnabledNode->value_false;
++    if (!android::base::WriteStringToFile(value, mChargingEnabledNode->path, true)) {
++        LOG(ERROR) << "Failed to write to charging enable node: " << strerror(errno);
++        return ndk::ScopedAStatus::fromExceptionCode(EX_ILLEGAL_STATE);
++    }
++
++    return ndk::ScopedAStatus::ok();
++}
++#else
++ndk::ScopedAStatus ChargingControl::getChargingEnabled(bool* /* _aidl_return */) {
++    return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
++}
++
++ndk::ScopedAStatus ChargingControl::setChargingEnabled(bool /* enabled */) {
++    return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
++}
++#endif
++
++#ifdef HEALTH_CHARGING_CONTROL_SUPPORTS_DEADLINE
++static const std::vector<std::string> kChargingDeadlineNodes = {
++        HEALTH_CHARGING_CONTROL_DEADLINE_PATH,
++        "/sys/class/power_supply/battery/charge_deadline",
++};
++
++ChargingControl::ChargingControl() : mChargingDeadlineNode(nullptr) {
++    while (!mChargingDeadlineNode) {
++        for (const auto& node : kChargingDeadlineNodes) {
++            if (access(node.c_str(), R_OK | W_OK) == 0) {
++                mChargingDeadlineNode = &node;
++                break;
++            }
++            PLOG(WARNING) << "Failed to access() file " << node;
++            usleep(100000);
++        }
++    }
++}
++
++ndk::ScopedAStatus ChargingControl::setChargingDeadline(int64_t deadline) {
++    std::string content = std::to_string(deadline);
++    if (!android::base::WriteStringToFile(content, *mChargingDeadlineNode, true)) {
++        LOG(ERROR) << "Failed to write to charging deadline node: " << strerror(errno);
++        return ndk::ScopedAStatus::fromExceptionCode(EX_ILLEGAL_STATE);
++    }
++
++    return ndk::ScopedAStatus::ok();
++}
++#else
++ndk::ScopedAStatus ChargingControl::setChargingDeadline(int64_t /* deadline */) {
++    return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
++}
++#endif
++
++ndk::ScopedAStatus ChargingControl::getSupportedMode(int* _aidl_return) {
++    int mode = 0;
++
++#ifdef HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE
++    mode |= static_cast<int>(ChargingControlSupportedMode::TOGGLE);
++#endif
++
++#ifdef HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS
++    mode |= static_cast<int>(ChargingControlSupportedMode::BYPASS);
++#endif
++
++#ifdef HEALTH_CHARGING_CONTROL_SUPPORTS_DEADLINE
++    mode |= static_cast<int>(ChargingControlSupportedMode::DEADLINE);
++#endif
++
++    *_aidl_return = mode;
++
++    return ndk::ScopedAStatus::ok();
++}
++
++binder_status_t ChargingControl::dump(int fd, const char** /* args */, uint32_t /* numArgs */) {
++    bool isChargingEnabled;
++    int supportedMode;
++    getChargingEnabled(&isChargingEnabled);
++    getSupportedMode(&supportedMode);
++
++#ifdef HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE
++    dprintf(fd, "Charging control node selected: %s\n", mChargingEnabledNode->path.c_str());
++    dprintf(fd, "Charging enabled: %s\n", isChargingEnabled ? "true" : "false");
++#endif
++
++#ifdef HEALTH_CHARGING_CONTROL_SUPPORTS_DEADLINE
++    dprintf(fd, "Charging deadline node selected: %s\n", mChargingDeadlineNode->c_str());
++#endif
++
++    dprintf(fd, "Charging control supported mode: %d\n", supportedMode);
++
++    return STATUS_OK;
++}
++
++}  // namespace health
++}  // namespace lineage
++}  // namespace vendor
++}  // namespace aidl
+diff --git a/health/aidl/default/ChargingControl.h b/health/aidl/default/ChargingControl.h
+new file mode 100644
+index 0000000..9fa3793
+--- /dev/null
++++ b/health/aidl/default/ChargingControl.h
+@@ -0,0 +1,48 @@
++/*
++ * Copyright (C) 2022-2023 The LineageOS Project
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ */
++
++#pragma once
++
++#include <aidl/vendor/lineage/health/BnChargingControl.h>
++#include <aidl/vendor/lineage/health/ChargingControlSupportedMode.h>
++#include <android/binder_status.h>
++#include <string>
++#include "android/binder_auto_utils.h"
++
++namespace aidl {
++namespace vendor {
++namespace lineage {
++namespace health {
++
++struct ChargingEnabledNode {
++    const std::string path;
++    const std::string value_true;
++    const std::string value_false;
++};
++
++struct ChargingControl : public BnChargingControl {
++    ChargingControl();
++
++    ndk::ScopedAStatus getChargingEnabled(bool* _aidl_return) override;
++    ndk::ScopedAStatus setChargingEnabled(bool enabled) override;
++    ndk::ScopedAStatus setChargingDeadline(int64_t deadline) override;
++    ndk::ScopedAStatus getSupportedMode(int* _aidl_return) override;
++    binder_status_t dump(int fd, const char** args, uint32_t numArgs) override;
++
++  private:
++#ifdef HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE
++    const ChargingEnabledNode* mChargingEnabledNode;
++#endif
++
++#ifdef HEALTH_CHARGING_CONTROL_SUPPORTS_DEADLINE
++    const std::string* mChargingDeadlineNode;
++#endif
++};
++
++}  // namespace health
++}  // namespace lineage
++}  // namespace vendor
++}  // namespace aidl
+diff --git a/health/aidl/default/android.hardware.health-service.batteryless.rc b/health/aidl/default/android.hardware.health-service.batteryless.rc
+new file mode 100644
+index 0000000..0e874f3
+--- /dev/null
++++ b/health/aidl/default/android.hardware.health-service.batteryless.rc
+@@ -0,0 +1,6 @@
++service vendor.health-default /vendor/bin/hw/android.hardware.health-service.batteryless
++    class hal
++    user system
++    group system
++    capabilities WAKE_ALARM BLOCK_SUSPEND
++    file /dev/kmsg w
+diff --git a/health/aidl/default/android.hardware.health-service.batteryless.xml b/health/aidl/default/android.hardware.health-service.batteryless.xml
+new file mode 100644
+index 0000000..e8abb3c
+--- /dev/null
++++ b/health/aidl/default/android.hardware.health-service.batteryless.xml
+@@ -0,0 +1,13 @@
++<!--
++  Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
++  Copyright (C) 2024 The LineageOS Project
++  SPDX-License-Identifier: BSD-3-Clause-Clear
++-->
++
++<manifest version="1.0" type="device">
++    <hal format="aidl">
++        <name>android.hardware.health</name>
++        <version>1</version>
++        <fqname>IHealth/default</fqname>
++    </hal>
++</manifest>
+diff --git a/health/aidl/default/android.hardware.health-service.batteryless_recovery.rc b/health/aidl/default/android.hardware.health-service.batteryless_recovery.rc
+new file mode 100644
+index 0000000..3ed4902
+--- /dev/null
++++ b/health/aidl/default/android.hardware.health-service.batteryless_recovery.rc
+@@ -0,0 +1,7 @@
++service vendor.health-recovery /system/bin/hw/android.hardware.health-service.batteryless_recovery
++    class hal
++    seclabel u:r:hal_health_default:s0
++    user system
++    group system
++    capabilities WAKE_ALARM BLOCK_SUSPEND
++    file /dev/kmsg w
+diff --git a/health/aidl/default/service-batteryless.cpp b/health/aidl/default/service-batteryless.cpp
+new file mode 100644
+index 0000000..a8d1c92
+--- /dev/null
++++ b/health/aidl/default/service-batteryless.cpp
+@@ -0,0 +1,53 @@
++/*
++ * Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (C) 2024 The LineageOS Project
++ * SPDX-License-Identifier: BSD-3-Clause-Clear
++ */
++
++#define LOG_TAG "android.hardware.health-service.batteryless"
++
++#include <android-base/logging.h>
++#include <android/binder_interface_utils.h>
++#include <cutils/klog.h>
++#include <health-impl/ChargerUtils.h>
++#include <health-impl/Health.h>
++#include <health/utils.h>
++
++using aidl::android::hardware::health::BatteryHealth;
++using aidl::android::hardware::health::BatteryStatus;
++using aidl::android::hardware::health::HalHealthLoop;
++using aidl::android::hardware::health::Health;
++
++namespace aidl::android::hardware::health {
++class HealthImpl : public Health {
++  public:
++    HealthImpl(std::string_view instance_name, std::unique_ptr<struct healthd_config>&& config)
++        : Health(instance_name, std::move(config)) {}
++
++  protected:
++    void UpdateHealthInfo(HealthInfo* health_info) override {
++        health_info->chargerAcOnline = true;
++        health_info->chargerUsbOnline = false;
++        health_info->chargerWirelessOnline = false;
++        health_info->chargerDockOnline = false;
++        health_info->batteryStatus = BatteryStatus::UNKNOWN;
++        health_info->batteryHealth = BatteryHealth::UNKNOWN;
++        health_info->batteryPresent = false;
++        health_info->batteryLevel = 100;
++    }
++};
++}  // namespace aidl::android::hardware::health
++
++int main() {
++#ifdef __ANDROID_RECOVERY__
++    android::base::InitLogging(NULL, android::base::KernelLogger);
++#endif
++    auto config = std::make_unique<healthd_config>();
++    ::android::hardware::health::InitHealthdConfig(config.get());
++    auto binder = ndk::SharedRefBase::make<aidl::android::hardware::health::HealthImpl>(
++            "default", std::move(config));
++
++    KLOG_INFO(LOG_TAG, "Starting health HAL.");
++    auto hal_health_loop = std::make_shared<HalHealthLoop>(binder, binder);
++    return hal_health_loop->StartLoop();
++}
+diff --git a/health/aidl/default/service.cpp b/health/aidl/default/service.cpp
+new file mode 100644
+index 0000000..a733b89
+--- /dev/null
++++ b/health/aidl/default/service.cpp
+@@ -0,0 +1,25 @@
++/*
++ * Copyright (C) 2022-2023 The LineageOS Project
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ */
++
++#include "ChargingControl.h"
++
++#include <android-base/logging.h>
++#include <android/binder_manager.h>
++#include <android/binder_process.h>
++
++using ::aidl::vendor::lineage::health::ChargingControl;
++
++int main() {
++    ABinderProcess_setThreadPoolMaxThreadCount(0);
++    std::shared_ptr<ChargingControl> lh = ndk::SharedRefBase::make<ChargingControl>();
++
++    const std::string instance = std::string() + ChargingControl::descriptor + "/default";
++    binder_status_t status = AServiceManager_addService(lh->asBinder().get(), instance.c_str());
++    CHECK_EQ(status, STATUS_OK);
++
++    ABinderProcess_joinThreadPool();
++    return EXIT_FAILURE;  // should not reach
++}
+diff --git a/health/aidl/default/vendor.lineage.health-service.default.rc b/health/aidl/default/vendor.lineage.health-service.default.rc
+new file mode 100644
+index 0000000..77bd83f
+--- /dev/null
++++ b/health/aidl/default/vendor.lineage.health-service.default.rc
+@@ -0,0 +1,4 @@
++service vendor.lineage_health /vendor/bin/hw/vendor.lineage.health-service.default
++    class hal
++    user system
++    group system
+diff --git a/health/aidl/default/vendor.lineage.health-service.default.xml b/health/aidl/default/vendor.lineage.health-service.default.xml
+new file mode 100644
+index 0000000..f9b0ce6
+--- /dev/null
++++ b/health/aidl/default/vendor.lineage.health-service.default.xml
+@@ -0,0 +1,6 @@
++<manifest version="1.0" type="device">
++    <hal format="aidl">
++        <name>vendor.lineage.health</name>
++        <fqname>IChargingControl/default</fqname>
++    </hal>
++</manifest>
+diff --git a/health/aidl/vendor/lineage/health/ChargingControlSupportedMode.aidl b/health/aidl/vendor/lineage/health/ChargingControlSupportedMode.aidl
+new file mode 100644
+index 0000000..a1c8136
+--- /dev/null
++++ b/health/aidl/vendor/lineage/health/ChargingControlSupportedMode.aidl
+@@ -0,0 +1,25 @@
++/*
++ * Copyright (C) 2022-2023 The LineageOS Project
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ */
++
++package vendor.lineage.health;
++
++@Backing(type="int") @VintfStability
++enum ChargingControlSupportedMode {
++    /**
++     * The device supports control charging through an on/off toggle.
++     */
++    TOGGLE = 1 << 0,
++
++    /**
++     * The device allows battery bypass when charging stops.
++     */
++    BYPASS = 1 << 1,
++
++    /**
++     * The device supports control charging by specifying the deadline
++     */
++    DEADLINE = 1 << 2,
++}
+diff --git a/health/aidl/vendor/lineage/health/IChargingControl.aidl b/health/aidl/vendor/lineage/health/IChargingControl.aidl
+new file mode 100644
+index 0000000..5b01283
+--- /dev/null
++++ b/health/aidl/vendor/lineage/health/IChargingControl.aidl
+@@ -0,0 +1,51 @@
++/*
++ * Copyright (C) 2022-2023 The LineageOS Project
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ */
++
++package vendor.lineage.health;
++
++@VintfStability
++interface IChargingControl {
++    /**
++     * Get battery charging enablement status.
++     * Note that this only returns whether charging should be enabled or not when a charger
++     * is plugged, not if the battery is actually charging.
++     *
++     * @return whether if battery charging is enabled.
++     *         If error:
++     *         - Return exception with code EX_ILLEGAL_STATE
++     *           if the value can't be determined from the driver.
++     *         - Return service specific error with code STATUS_UNKNOWN
++     *           for other errors.
++     */
++    boolean getChargingEnabled();
++
++    /**
++     * Set battery charging enabled.
++     *
++     * @return nothing if successful.
++     *         If error:
++     *         - Return service specific error with code STATUS_UNKNOWN
++     *           for other errors.
++     */
++    void setChargingEnabled(in boolean enabled);
++
++    /**
++     * Sets the charging control deadline, if deadline mode is supported.
++     *
++     * @return nothing if successful.
++     *         If error:
++     *         - Return service specific error with code STATUS_UNKNOWN
++     *            for other errors.
++     */
++    void setChargingDeadline(in long deadline);
++
++    /**
++     * Get the device's supported charging control mode.
++     *
++     * @return a bitmask of ChargingControlSupportedMode.
++     */
++    int getSupportedMode();
++}

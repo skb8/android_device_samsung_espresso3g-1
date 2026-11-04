@@ -1,0 +1,16 @@
+diff --git a/Android.bp b/Android.bp
+index 270d327..7263ded 100644
+--- a/Android.bp
++++ b/Android.bp
+@@ -38,6 +38,11 @@ cc_library {
+     name: "libopus",
+     vendor_available: true,
+     host_supported: true,
++    apex_available: [
++        "//apex_available:platform",
++        "com.android.btservices",
++        "//apex_available:anyapex",
++    ],
+ 
+     export_include_dirs: ["include"],
+ 

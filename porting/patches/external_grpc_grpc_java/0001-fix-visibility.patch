@@ -1,0 +1,24 @@
+diff --git a/Android.bp b/Android.bp
+index 3c03e6c..3bece7b 100644
+--- a/Android.bp
++++ b/Android.bp
+@@ -63,7 +63,7 @@ java_library {
+         "grpc-java-protobuf-lite",
+         "grpc-java-stub",
+     ],
+-    visibility: ["//packages/modules/Bluetooth/android/blueberry/server"],
++    visibility: ["//visibility:public"],
+ }
+ 
+ java_library {
+diff --git a/netty/shaded/Android.bp b/netty/shaded/Android.bp
+index e4563a1..8268883 100644
+--- a/netty/shaded/Android.bp
++++ b/netty/shaded/Android.bp
+@@ -40,5 +40,5 @@ java_library {
+     static_libs: [
+         "grpc-netty-shaded-1.16.1-jar",
+     ],
+-    visibility: ["//packages/modules/Bluetooth/android/blueberry/server"],
++    visibility: ["//visibility:public"],
+ }

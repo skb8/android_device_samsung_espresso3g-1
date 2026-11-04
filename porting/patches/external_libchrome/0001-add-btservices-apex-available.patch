@@ -1,0 +1,16 @@
+diff --git a/Android.bp b/Android.bp
+index aada4d9..ef15f93 100644
+--- a/Android.bp
++++ b/Android.bp
+@@ -822,6 +822,11 @@ cc_library {
+     ramdisk_available: true,
+     recovery_available: true,
+     vendor_available: true,
++    apex_available: [
++        "//apex_available:platform",
++        "com.android.btservices",
++        "//apex_available:anyapex",
++    ],
+     defaults: ["libchrome-defaults"],
+     srcs: libchromeCommonSrc,
+ 

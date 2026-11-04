@@ -98,6 +98,32 @@ image и system server. Это поддерживаемый конфигурац
 полная предкомпиляция приложений на этапе bring-up не включается. Применение
 патча проверено, Android dumpvars после него ожидается на машине пользователя.
 
+### Soong Blueprint & AOSP 13 r75 Cohort (2026-11-05)
+
+При последующей генерации графа Blueprint/Soong был выявлен и решен ряд блокеров:
+1. **Память и OOM**: Построение графа зависимостей Soong на Android 13 требует ~14 GiB
+   виртуальной памяти (~7.5 GiB RAM + ~6.5 GiB Swap). На хосте настроен swapfile на
+   16 GiB (`/swapfile`), доведя общий объем доступной памяти до ~26 GiB.
+2. **Синхронизация когорты AOSP 13 r75 (`android-13.0.0_r75`)**: Зафиксированы ревизии
+   в `local_manifest.xml` для устранения отсутствующих зависимостей:
+   - `prebuilts/sdk`: предоставляет `androidx.compose.material3_material3` для SystemUI;
+   - `prebuilts/misc`: предоставляет `robolectric_nativeruntime_native_prebuilt`;
+   - `prebuilts/gradle-plugin`: предоставляет `sdklib-30.3.0-alpha08.jar` для metalava;
+   - `external/boringssl`: предоставляет `libbssl_ffi` для `prng_seeder`;
+   - `frameworks/libs/systemui`: предоставляет `view_capture` для Trebuchet Launcher3.
+3. **Набор патчей Soong и сборки (`porting/patches/`)**:
+   - `vendor_lineage`: восстановлены OMAP Soong переменные конфигурации (`has_memfd_backport`,
+     `has_legacy_camera_hal1`, `camera_parameter_library`, `needs_netd_direct_connect_rule`).
+   - `hardware_lineage_interfaces`: добавлены AIDL-интерфейсы `vendor.lineage.health`.
+   - `external_robolectric`: адаптированы имена библиотек (`gson-prebuilt-jar`, `auto_common`,
+     `auto_value_plugin`) под AOSP 13.
+   - Видимость Soong: настроена доступность модулей для `external/bouncycastle`,
+     `external/conscrypt`, `external/okhttp` и `external/grpc-grpc-java`.
+   - Bluetooth APEX `com.android.btservices`: добавлен в `apex_available` для
+     `external/libchrome`, `external/libopus`, `frameworks/proto_logging`.
+   Скрипт `porting/prepare.sh` автоматически валидирует и применяет весь набор патчей.
+
+
 1. Общий espressowifi и TI hardware пока из Android 9. Проверить/обновить
    пакеты, include-пути, HAL, XML audio policy, VINTF и SELinux.
 2. PowerVR: gralloc, HWC, EGL/GLES и синхронизация буферов. Exynos/Mali от S2

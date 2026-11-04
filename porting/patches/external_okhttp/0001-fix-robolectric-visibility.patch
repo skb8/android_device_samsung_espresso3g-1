@@ -1,0 +1,12 @@
+diff --git a/Android.bp b/Android.bp
+index 0db44d2..e6f1c2f 100644
+--- a/Android.bp
++++ b/Android.bp
+@@ -125,6 +125,7 @@ java_library {
+     visibility: [
+         "//art/build/sdk",
+         "//external/robolectric-shadows",
++        "//external/robolectric",
+     ],
+     static_libs: [
+         "okhttp",

@@ -1,0 +1,15 @@
+diff --git a/stats/enums/bluetooth/Android.bp b/stats/enums/bluetooth/Android.bp
+index 2bf64eb..820571d 100644
+--- a/stats/enums/bluetooth/Android.bp
++++ b/stats/enums/bluetooth/Android.bp
+@@ -33,6 +33,10 @@ cc_library_static {
+         "smp/enums.proto",
+     ],
+     min_sdk_version: "30",
++    apex_available: [
++        "//apex_available:platform",
++        "com.android.btservices",
++    ],
+ }
+ 
+ filegroup {

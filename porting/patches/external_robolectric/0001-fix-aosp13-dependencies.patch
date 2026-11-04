@@ -1,0 +1,66 @@
+diff --git a/Android.bp b/Android.bp
+index 319b5e3..29efa00 100644
+--- a/Android.bp
++++ b/Android.bp
+@@ -255,7 +255,7 @@ java_device_for_host {
+     name: "robolectric-host-android-support-multidex_upstream",
+     libs: [
+         "android-support-multidex",
+-        "com.android.support.multidex_1.0.3",
++        // "com.android.support.multidex_1.0.3",
+     ],
+ }
+ 
+diff --git a/processor/Android.bp b/processor/Android.bp
+index 9d28322..53ec422 100644
+--- a/processor/Android.bp
++++ b/processor/Android.bp
+@@ -28,10 +28,10 @@ java_library_host {
+         "asm-commons-9.2",
+         "guava",
+         "asm-tree-9.2",
+-        "gson-prebuilt-jar-2.9.1",
++        "gson-prebuilt-jar",
+         "asm-9.2",
+         "jsr305",
+-        "auto-common-1.1.2",
++        "auto_common",
+     ],
+ 
+     openjdk9: {
+@@ -69,7 +69,7 @@ java_test_host {
+         "objenesis",
+         "junit",
+         "truth-prebuilt",
+-        "gson-prebuilt-jar-2.9.1",
++        "gson-prebuilt-jar",
+         "jsr305",
+     ],
+ 
+diff --git a/robolectric/Android.bp b/robolectric/Android.bp
+index 139062c..f7efe6f 100644
+--- a/robolectric/Android.bp
++++ b/robolectric/Android.bp
+@@ -85,7 +85,7 @@ java_test_host {
+         "junit",
+         "icu4j",
+         "truth-prebuilt",
+-        "truth-java8-extension-jar",
++        // "truth-java8-extension-jar",
+         "robolectric-ant-1.8.0",
+         "asm-9.2",
+         "jsr305",
+diff --git a/shadows/framework/Android.bp b/shadows/framework/Android.bp
+index 04ba8ff..d52c0a0 100644
+--- a/shadows/framework/Android.bp
++++ b/shadows/framework/Android.bp
+@@ -60,8 +60,7 @@ java_library_host {
+         "robolectric-host-android_all_upstream",
+     ],
+     plugins: [
+-        "auto_value_plugin_1.9",
+-        "auto_value_builder_plugin_1.9",
++        "auto_value_plugin",
+         "Robolectric_processor_upstream",
+     ],
+ 

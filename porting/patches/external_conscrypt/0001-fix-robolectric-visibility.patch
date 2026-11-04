@@ -1,0 +1,21 @@
+diff --git a/Android.bp b/Android.bp
+index b652021..0d47f52 100644
+--- a/Android.bp
++++ b/Android.bp
+@@ -282,6 +282,7 @@ java_library {
+     visibility: [
+         "//art/build",
+         "//external/robolectric-shadows",
++        "//external/robolectric",
+         "//frameworks/layoutlib",
+     ],
+     static_libs: [
+@@ -534,6 +535,8 @@ java_library_host {
+     visibility: [
+         "//build/make/tools/signapk",
+         "//tools/apksig",
++        "//external/robolectric:__subpackages__",
++        "//external/robolectric",
+     ],
+     srcs: [
+         "common/src/main/java/**/*.java",

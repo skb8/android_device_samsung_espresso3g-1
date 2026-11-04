@@ -2,10 +2,30 @@
 <!-- Experimental source composition; not a known-working ROM manifest. -->
 <manifest>
   <remote name="espresso-github" fetch="https://github.com/" />
-  <!-- Match Blueprint to the Android 13 r75 cohort used by upstream Soong. -->
+  <!-- Match Blueprint and core prebuilts to the Android 13 r75 cohort used by upstream Soong. -->
   <remove-project name="platform/build/blueprint" />
   <project name="platform/build/blueprint" path="build/blueprint" remote="aosp"
            revision="ca8f0e8e3571c866d69d34cbd47b3989abe8e8cd"
+           upstream="refs/tags/android-13.0.0_r75" clone-depth="1" />
+  <remove-project name="platform/prebuilts/sdk" />
+  <project name="platform/prebuilts/sdk" path="prebuilts/sdk" remote="aosp"
+           revision="fcd7b576822ae46dbd3b0ed169f8a802850d5957"
+           upstream="refs/tags/android-13.0.0_r75" clone-depth="1" />
+  <remove-project name="platform/prebuilts/misc" />
+  <project name="platform/prebuilts/misc" path="prebuilts/misc" remote="aosp"
+           revision="8d7ea3658861d9eb476ef6e33e1a9ebf6177fdf0"
+           upstream="refs/tags/android-13.0.0_r75" clone-depth="1" />
+  <remove-project name="platform/prebuilts/gradle-plugin" />
+  <project name="platform/prebuilts/gradle-plugin" path="prebuilts/gradle-plugin" remote="aosp"
+           revision="4045aecd4f30ac8e3e0c7aa0e24d23b6b2263efa"
+           upstream="refs/tags/android-13.0.0_r75" clone-depth="1" />
+  <remove-project name="platform/external/boringssl" />
+  <project name="platform/external/boringssl" path="external/boringssl" remote="aosp"
+           revision="62fa09ed43a813d8ff8e89d08a5ecf91dfba2a0a"
+           upstream="refs/tags/android-13.0.0_r75" clone-depth="1" />
+  <remove-project name="platform/frameworks/libs/systemui" />
+  <project name="platform/frameworks/libs/systemui" path="frameworks/libs/systemui" remote="aosp"
+           revision="313ca2b3cbaef97cb4665b24412eccf3d4cdcae3"
            upstream="refs/tags/android-13.0.0_r75" clone-depth="1" />
   <remove-project name="LineageOS/android_build" />
   <project name="rINanDO/android_build" path="build/make" remote="espresso-github"
