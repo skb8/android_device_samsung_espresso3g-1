@@ -1,0 +1,201 @@
+{
+  "status": "experimental-unbuilt",
+  "base_manifest": {
+    "repo": "rINanDO/android",
+    "sha": "5539bd1a78111bd59459dbd5eea67c6a42378add",
+    "message": "manifest: November 2022 Security Update\n\nPlatform: android-13.0.0_r11 -> android-13.0.0_r13\ngs101: android-13.0.0_r0.20 -> android-13.0.0_r0.44\ngs201: android-13.0.0_r0.32 -> android-13.0.0_r0.45\n\nChange-Id: I4fff31ce50ca74303e861e22498c425afd5d5d70"
+  },
+  "projects": [
+    {
+      "repo": "rINanDO/android_build",
+      "sha": "876d5617a2461cc73049e175a1e29e41fbdcb7e2",
+      "message": "Disable Recovery Patch via BOARD_NO_RECOVERY_PATCH\n\nAdd BOARD_NO_RECOVERY_PATCH := true in your BoardConfig.mk to\ndisable the creation of a recovery patch in\n/system|vendor/etc/recovery.img.\n\nChange-Id: Ibf7c2d695b35aad22cd97e8c67e3aa3b9629b986\nSigned-off-by: Dominggoes Isakh <drjisakh@gmail.com>",
+      "path": "build/make",
+      "replaces": "LineageOS/android_build"
+    },
+    {
+      "repo": "rINanDO/android_build_soong",
+      "sha": "0b04890e6289f030aa69ddc14dbfb93195863512",
+      "message": "DNM comment out nested class loader checks\n\nChange-Id: Ib7d6795ae6a21dba67bc2da12e9991d9aeab0c40",
+      "path": "build/soong",
+      "replaces": "LineageOS/android_build_soong"
+    },
+    {
+      "repo": "rINanDO/android_art",
+      "sha": "d80dab2b224f2acd133c190be8991e0b564da585",
+      "message": "art: Conditionally remove version check for memfd_create()\n\n * This check is redundant as devices that lack\n   the memfd_create syscall will fail to boot\n   regardless of the check.\n\nThis conditionally reverts commit 51f89d9.\n\nChange-Id: Ife2cebde713e14bd787f48628092650866e2ac09\n(cherry picked from commit dd1d9ba1851d96a8d4f55cd8e983fcee1519d953)\nSigned-off-by: Dominggoes Isakh <drjisakh@gmail.com>",
+      "path": "art",
+      "replaces": "platform/art"
+    },
+    {
+      "repo": "rINanDO/android_bionic",
+      "sha": "1edda674bdf4ee2a528d98588a2bf1a02c8f615f",
+      "message": "Hack: Ignore invalid pthread_t to %s\n\nWe can't set/hack target_sdk_version from our driver.\n\nChange-Id: Id4f4449774a582afbedf34a2e9675451dfd592b1\nSigned-off-by: Dominggoes Isakh <drjisakh@gmail.com>",
+      "path": "bionic",
+      "replaces": "LineageOS/android_bionic"
+    },
+    {
+      "repo": "rINanDO/android_frameworks_base",
+      "sha": "3353c27004a22904bce26644cf9a3aab2977412e",
+      "message": "Add support for app signature spoofing\n\nThis is needed by microG GmsCore to pretend to be the official Google\nPlay Services package, because client apps check the package signature\nto make sure it matches Google's official certificate.\n\nThis was forward-ported from the Android 10 patch by gudenau:\nhttps://github.com/microg/android_packages_apps_GmsCore/pull/957\n\nChanges made for Android 11:\n  - Updated PackageInfo calls\n  - Added new permission to public API surface, needed for\n    PermissionController which is now an updatable APEX on 11\n  - Added a dummy permission group to allow users to manage the\n    permission through the PermissionController UI\n    (by Vachounet <vachounet@live.fr>)\n  - Updated location provider comment for conciseness\n\nChanges made for Android 12:\n  - Moved mayFakeSignature into lock-free Computer subclass\n  - Always get permissions for packages that request signature spoofing\n    (otherwise permissions are usually ommitted and thus the permission\n    check doesn't work properly)\n  - Optimize mayFakeSignature check order to improve performance\n\nChanges made for Android 13:\n  - Computer subclass is now an independent class.\n\nChange-Id: I4cb021605257b9a4d13015aec3401fee5e5841b6\nChange-Id: I4f446734f9380fdbe994c07aea6c7cd893985c38\nSigned-off-by: Dominggoes Isakh <drjisakh@gmail.com>",
+      "path": "frameworks/base",
+      "replaces": "LineageOS/android_frameworks_base"
+    },
+    {
+      "repo": "rINanDO/android_frameworks_native",
+      "sha": "54610768f6abcf8c5a626812820bc3455e3f99e7",
+      "message": "ProcessState: Only log \"thread pool shrunk\" message\n\nChange-Id: I782a79d5476a18059c2822addb43dd0efe9b04d6\nSigned-off-by: Dominggoes Isakh <drjisakh@gmail.com>",
+      "path": "frameworks/native",
+      "replaces": "LineageOS/android_frameworks_native"
+    },
+    {
+      "repo": "rINanDO/android_frameworks_av",
+      "sha": "ae5c2adafb2052c7ac288d269dc2c6c8b2f0c670",
+      "message": "There are three SCO devices. Fallback from one to the others if needed\n\nChange-Id: I414dcb6b154855c00cb8520b23dc1069827864b2\n\nSigned-off-by: Dominggoes Isakh <drjisakh@gmail.com>",
+      "path": "frameworks/av",
+      "replaces": "LineageOS/android_frameworks_av"
+    },
+    {
+      "repo": "rINanDO/android_frameworks_libs_net",
+      "sha": "12e318a9ecd1224084281a0137dc0fb6c6bc3ee5",
+      "message": "BpfMap: Don't abort() when eBPF is not available\n\nChange-Id: Id50f3d16249847ecf2e65e8c3ab44a67fcc61d90\nSigned-off-by: Dominggoes Isakh <drjisakh@gmail.com>",
+      "path": "frameworks/libs/net",
+      "replaces": "platform/frameworks/libs/net"
+    },
+    {
+      "repo": "rINanDO/android_system_core",
+      "sha": "b066a2e2ee1d791d2b39153be37250fa9ebdccf7",
+      "message": "healthd: charger: allow home button to wake\n\nA squashed commit of the following:\n\ncommit 6ce21d726a967b2cc942476758b9ab3851ff39f1\nAuthor: Pawit Pornkitprasan <p.pawit@gmail.com>\nDate:   Sun Feb 3 22:21:32 2013 +0700\n\n    charger: do not suspend when handling home\n\n    When using Google's suspend implementation, home press should also wake\n    the device from suspend\n\n    Change-Id: I51f3e45c5cb418b0b3718e7223a1336876379043\n\ncommit 75a7cf84df719d8cf5cd77093b3f9fee3c09017e\nAuthor: Pawit Pornkitprasan <p.pawit@gmail.com>\nDate:   Sat Jul 21 22:09:37 2012 +0700\n\n    charger: allow home button to wake\n\n    On certain devices (e.g. galaxysmtd), the user expects the physical\n    home button to be able to wake the device as well as the power button.\n\n    Change-Id: If764f36aba3810dfa5233af8baf0a740b04889e0\n\nChange-Id: I362b227e26bc864a2cad471df799bce2d682ecee\nSigned-off-by: Dominggoes Isakh <drjisakh@gmail.com>",
+      "path": "system/core",
+      "replaces": "LineageOS/android_system_core"
+    },
+    {
+      "repo": "rINanDO/android_system_bpf",
+      "sha": "81ccdbb9b9272fa349883713eb7df48be7e58f6d",
+      "message": "Disable bpf map array kernel bug detection when bpf is not supported by kernel\n\nSigned-off-by: Dominggoes Isakh <drjisakh@gmail.com>",
+      "path": "system/bpf",
+      "replaces": "platform/system/bpf"
+    },
+    {
+      "repo": "rINanDO/android_system_netd",
+      "sha": "115cb9ff267a8bc2f1a97e4686d81649b35de0b9",
+      "message": "netd: Allow devices to force-add directly-connected routes\n\nMost sane devices have directly-connected routes properly\nadded by ConnectivityService, but a number of Samsung RIL\nlibraries seem to be doing \"special\" things, the end result\nof which is IPv4 mobile data is non-functional due to lack\nof a default route.\n\nAffected devices have a log entry similar to the below:\n  Error adding route 0.0.0.0/0 -> xxx.xxx.xxx.xxx rmnet0 to table 1002: Network is unreachable\n\nThis reverts, with guards, commit 92e8f96e43320efd5183d7452fb90883fd96415e.\n\nChange-Id: I6a653d19c1c72c136e78d8d841e87d3c166698ea\nSigned-off-by: Dominggoes Isakh <drjisakh@gmail.com>",
+      "path": "system/netd",
+      "replaces": "platform/system/netd"
+    },
+    {
+      "repo": "rINanDO/android_system_libhidl",
+      "sha": "480def015b286acfa4ceaca60949fea7825ed08a",
+      "message": "HidlSupport: Fix zero-termination for legacy blobs\n\nChange-Id: I93357c5af4c8fc349000df519e3365836c30530d",
+      "path": "system/libhidl",
+      "replaces": "LineageOS/android_system_libhidl"
+    },
+    {
+      "repo": "rINanDO/android_system_libhwbinder",
+      "sha": "b3366c850a94a0f896438797eec0c43f9f909616",
+      "message": "Don't crash \"Binder threadpool cannot be shrunk after starting\"\n\nChange-Id: Ied6460b02e06da3902c99d0ada93f4751fd6ecad\nSigned-off-by: Dominggoes Isakh <drjisakh@gmail.com>",
+      "path": "system/libhwbinder",
+      "replaces": "platform/system/libhwbinder"
+    },
+    {
+      "repo": "rINanDO/android_system_memory_lmkd",
+      "sha": "0c5ade3a83f8240697760fb340609922a4ec7086",
+      "message": "Merge tag 'android-13.0.0_r11' into staging/lineage-20.0_merge-android-13.0.0_r11\n\nAndroid 13.0.0 release 11\n\n# -----BEGIN PGP SIGNATURE-----\n#\n# iF0EABECAB0WIQRDQNE1cO+UXoOBCWTorT+BmrEOeAUCY0jiVAAKCRDorT+BmrEO\n# eJ6cAJsFAaSbhrCXTAEL+UjKsszkpFcU5QCePAzo+RPJvyGQgdvWYp3ScQ074es=\n# =Im90\n# -----END PGP SIGNATURE-----\n# gpg: Signature made Fri Oct 14 07:15:16 2022 EEST\n# gpg:                using DSA key 4340D13570EF945E83810964E8AD3F819AB10E78\n# gpg: Good signature from \"The Android Open Source Project <initial-contribution@android.com>\" [marginal]\n# gpg: initial-contribution@android.com: Verified 1366 signatures in the past\n#      11 months.  Encrypted 4 messages in the past 9 months.\n# gpg: WARNING: This key is not certified with sufficiently trusted signatures!\n# gpg:          It is not certain that the signature belongs to the owner.\n# Primary key fingerprint: 4340 D135 70EF 945E 8381  0964 E8AD 3F81 9AB1 0E78\n\n# By Suren Baghdasaryan\n# Via Android Build Coastguard Worker (39) and others\n* tag 'android-13.0.0_r11':\n  lmkd: Fix the text of the warning when pthread_setschedparam fails\n  lmkd: set normal scheduling policy for reaper threads\n\nChange-Id: I9f26b6526e72aa4e651568e284a771cb406f5ce8",
+      "path": "system/memory/lmkd",
+      "replaces": "LineageOS/android_system_memory_lmkd"
+    },
+    {
+      "repo": "rINanDO/android_vendor_lineage",
+      "sha": "2134160dae7d2719f2d68eae5db6f998f9e66348",
+      "message": "config: Override memfd backport support\n\nChange-Id: I2aefd0ea5e2515a4024dfb6c9dd08c1a26844d63\nSigned-off-by: Dominggoes Isakh <drjisakh@gmail.com>",
+      "path": "vendor/lineage",
+      "replaces": "LineageOS/android_vendor_lineage"
+    },
+    {
+      "repo": "rINanDO/android_hardware_lineage_interfaces",
+      "sha": "561e1681a82046b42a63c8400df8798cb44e8cc6",
+      "message": "Revert \"power: Deprecate lineage power HAL\"\n\nThis reverts commit 7a34d0b8a45837149f1670c9e1f05ea5e1066574.\n\nSigned-off-by: Dominggoes Isakh <drjisakh@gmail.com>",
+      "path": "hardware/lineage/interfaces",
+      "replaces": "LineageOS/android_hardware_lineage_interfaces"
+    },
+    {
+      "repo": "rINanDO/android_hardware_lineage_compat",
+      "sha": "39ddd3c587f1b56e41085b90fe991735e5bdf372",
+      "message": "Revert \"Provide shim for libcutils strdup8to16/strdup16to8\"\n\nThis reverts commit 004fc532309b77f31ab2d3a9d9d518d6574618e1.\n\nChange-Id: I00632eb141511b7fec91c8e03160666520ebbba5",
+      "path": "hardware/lineage/compat",
+      "replaces": "LineageOS/android_hardware_lineage_compat"
+    },
+    {
+      "repo": "rINanDO/android_packages_modules_adb",
+      "sha": "2bf3f0fa945d400c57f6ebfe0b65d1526e85ae35",
+      "message": "adb: Bring back support for legacy FunctionFS\n\nSigned-off-by: Kyle Harrison <khwebmail@gmail.com>\nChange-Id: Ibaaf031c167d66e1f08957763b5353d71134b4e0\nSigned-off-by: Dominggoes Isakh <drjisakh@gmail.com>",
+      "path": "packages/modules/adb",
+      "replaces": "LineageOS/android_packages_modules_adb"
+    },
+    {
+      "repo": "rINanDO/android_packages_modules_Bluetooth",
+      "sha": "ec322f23840deecd15ebb54be4e212f6bfdeab53",
+      "message": "Merge tag 'android-13.0.0_r43' into staging/lineage-20.0_merge-android-13.0.0_r43\n\nAndroid 13.0.0 release 43\n\n# -----BEGIN PGP SIGNATURE-----\n#\n# iF0EABECAB0WIQRDQNE1cO+UXoOBCWTorT+BmrEOeAUCZFABmAAKCRDorT+BmrEO\n# eGOIAKCHf+/I/K1ZPzxEPtla8Qvl70qrVACfduSiJbqisbXbh7g10KpYXg+USYA=\n# =CNtH\n# -----END PGP SIGNATURE-----\n# gpg: Signature made Mon May  1 21:14:48 2023 EEST\n# gpg:                using DSA key 4340D13570EF945E83810964E8AD3F819AB10E78\n# gpg: Good signature from \"The Android Open Source Project <initial-contribution@android.com>\" [marginal]\n# gpg: initial-contribution@android.com: Verified 1659 signatures in the past\n#      18 months.  Encrypted 4 messages in the past 15 months.\n# gpg: WARNING: This key is not certified with sufficiently trusted signatures!\n# gpg:          It is not certain that the signature belongs to the owner.\n# Primary key fingerprint: 4340 D135 70EF 945E 8381  0964 E8AD 3F81 9AB1 0E78\n\n# By Brian Delwiche\n# Via Android Build Coastguard Worker\n* tag 'android-13.0.0_r43':\n  Reject encryption drop in Common Criteria mode\n\nChange-Id: I920f6b1a029a786b546783d7d0e67df8aa6a48a7",
+      "path": "packages/modules/Bluetooth",
+      "replaces": "platform/packages/modules/Bluetooth"
+    },
+    {
+      "repo": "rINanDO/android_packages_modules_Connectivity",
+      "sha": "2e19356af9c04e19c325d68af342a31c40c0ddcc",
+      "message": "NetworkStatsService: Prevent crashes when eBPF is not supported\n\nChange-Id: Iec074ab985a1b413711ea13ea20382499cfaa663\nSigned-off-by: Dominggoes Isakh <drjisakh@gmail.com>",
+      "path": "packages/modules/Connectivity",
+      "replaces": "LineageOS/android_packages_modules_Connectivity"
+    },
+    {
+      "repo": "rINanDO/android_external_perfetto",
+      "sha": "936b5cedbc900e2064af6e18a3379c0a8eb21bb4",
+      "message": "Snap for 9354090 from 9ae996d0a069cfd8e0517c74629f5bac54ed72c5 to tm-qpr2-release\n\nChange-Id: Icab819399cd8f03933c5ede3c412c4c60d9f2f33",
+      "path": "external/perfetto",
+      "replaces": "platform/external/perfetto"
+    },
+    {
+      "repo": "rINanDO/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9",
+      "sha": "0e7d16580dd5fb78734174d56887f1e681d0ee4a",
+      "message": "Revert \"Add GCC deprecation warning and link to deprecation schedule.\"\n\nThis reverts commit bdb57364ad4941a344b6d6e22083762a7669c582.\n\nChange-Id: I542c03593ca2eecca1925898c95561faf5633d83",
+      "path": "prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9",
+      "replaces": "LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9"
+    },
+    {
+      "repo": "MightyM17/proprietary_vendor_samsung",
+      "sha": "13b176c69d0751b757bdc3e1a0c197b75b71e954",
+      "path": "vendor/samsung",
+      "replaces": null
+    },
+    {
+      "repo": "Unlegacy-Android/proprietary_vendor_ti",
+      "sha": "42872ce605cd719a85c58087321d2f8e078e26ba",
+      "path": "vendor/ti",
+      "replaces": null
+    },
+    {
+      "repo": "Unlegacy-Android/android_external_stlport",
+      "sha": "4baa325ccf755799857d2024cd553584eda76261",
+      "path": "external/stlport",
+      "replaces": null
+    },
+    {
+      "repo": "MightyM17/android_device_samsung_espressowifi-1",
+      "sha": "cd4b4f937a9b1f3e06c7bee32cbeeac5bb256a82",
+      "path": "device/samsung/espressowifi",
+      "replaces": null
+    },
+    {
+      "repo": "MightyM17/android_hardware_ti_omap4",
+      "sha": "5b94712a01f97140663e74935281c7fb6883a295",
+      "path": "hardware/ti/omap4",
+      "replaces": null
+    },
+    {
+      "repo": "MightyM17/android_kernel_ti_omap4",
+      "sha": "4f4a4b2427c5b09ec0442c0578957322ff4c7ca6",
+      "path": "kernel/ti/omap4",
+      "replaces": null
+    }
+  ]
+}
+

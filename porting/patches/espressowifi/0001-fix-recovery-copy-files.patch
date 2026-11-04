@@ -1,0 +1,13 @@
+diff --git a/device-custom.mk b/device-custom.mk
+index 953bcb9..1df3da3 100644
+--- a/device-custom.mk
++++ b/device-custom.mk
+@@ -17,7 +17,7 @@
+ LOCAL_PATH := device/samsung/espressowifi
+ 
+ # Recovery Ramdisk
+-PRODUCT_PACKAGES += \
++PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/recovery/root/init.recovery.espresso.rc:recovery/root/init.recovery.espresso.rc
+ 
+ PRODUCT_COPY_FILES += \

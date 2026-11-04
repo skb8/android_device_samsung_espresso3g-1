@@ -16,4 +16,8 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_espresso3g.mk \
-    $(LOCAL_DIR)/lineage.mk
+    $(LOCAL_DIR)/lineage_espresso3g.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_espresso3g-userdebug \
+    lineage_espresso3g-eng

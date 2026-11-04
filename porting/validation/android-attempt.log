@@ -1,0 +1,8 @@
+Experimental espresso3g / LineageOS 20 build attempt
+UTC 2026-11-04 14:41:26
+de99e8c84a33b6ced461f9461c534c1478b37b69
+df: Warning: cannot read table of mounted file systems: No such file or directory
+Filesystem      Size  Used Avail Use% Mounted on
+-                63G  2.2G   58G   4% /workspace/scratch/398f95fc335c
+BLOCKED: missing Android sources (build/envsetup.sh).
+Follow porting/README.md to sync the pinned source composition.

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Experimental source composition; not a known-working ROM manifest. -->
+<manifest>
+  <remote name="espresso-github" fetch="https://github.com/" />
+  <remove-project name="LineageOS/android_build" />
+  <project name="rINanDO/android_build" path="build/make" remote="espresso-github"
+           revision="876d5617a2461cc73049e175a1e29e41fbdcb7e2" clone-depth="1">
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <remove-project name="LineageOS/android_build_soong" />
+  <project name="rINanDO/android_build_soong" path="build/soong" remote="espresso-github"
+           revision="0b04890e6289f030aa69ddc14dbfb93195863512" clone-depth="1">
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <remove-project name="platform/art" />
+  <project name="rINanDO/android_art" path="art" remote="espresso-github"
+           revision="d80dab2b224f2acd133c190be8991e0b564da585" clone-depth="1" />
+  <remove-project name="LineageOS/android_bionic" />
+  <project name="rINanDO/android_bionic" path="bionic" remote="espresso-github"
+           revision="1edda674bdf4ee2a528d98588a2bf1a02c8f615f" clone-depth="1" />
+  <remove-project name="LineageOS/android_frameworks_base" />
+  <project name="rINanDO/android_frameworks_base" path="frameworks/base" remote="espresso-github"
+           revision="3353c27004a22904bce26644cf9a3aab2977412e" clone-depth="1" />
+  <remove-project name="LineageOS/android_frameworks_native" />
+  <project name="rINanDO/android_frameworks_native" path="frameworks/native" remote="espresso-github"
+           revision="54610768f6abcf8c5a626812820bc3455e3f99e7" clone-depth="1" />
+  <remove-project name="LineageOS/android_frameworks_av" />
+  <project name="rINanDO/android_frameworks_av" path="frameworks/av" remote="espresso-github"
+           revision="ae5c2adafb2052c7ac288d269dc2c6c8b2f0c670" clone-depth="1" />
+  <remove-project name="platform/frameworks/libs/net" />
+  <project name="rINanDO/android_frameworks_libs_net" path="frameworks/libs/net" remote="espresso-github"
+           revision="12e318a9ecd1224084281a0137dc0fb6c6bc3ee5" clone-depth="1" />
+  <remove-project name="LineageOS/android_system_core" />
+  <project name="rINanDO/android_system_core" path="system/core" remote="espresso-github"
+           revision="b066a2e2ee1d791d2b39153be37250fa9ebdccf7" clone-depth="1" />
+  <remove-project name="platform/system/bpf" />
+  <project name="rINanDO/android_system_bpf" path="system/bpf" remote="espresso-github"
+           revision="81ccdbb9b9272fa349883713eb7df48be7e58f6d" clone-depth="1" />
+  <remove-project name="platform/system/netd" />
+  <project name="rINanDO/android_system_netd" path="system/netd" remote="espresso-github"
+           revision="115cb9ff267a8bc2f1a97e4686d81649b35de0b9" clone-depth="1" />
+  <remove-project name="LineageOS/android_system_libhidl" />
+  <project name="rINanDO/android_system_libhidl" path="system/libhidl" remote="espresso-github"
+           revision="480def015b286acfa4ceaca60949fea7825ed08a" clone-depth="1" />
+  <remove-project name="platform/system/libhwbinder" />
+  <project name="rINanDO/android_system_libhwbinder" path="system/libhwbinder" remote="espresso-github"
+           revision="b3366c850a94a0f896438797eec0c43f9f909616" clone-depth="1" />
+  <remove-project name="LineageOS/android_system_memory_lmkd" />
+  <project name="rINanDO/android_system_memory_lmkd" path="system/memory/lmkd" remote="espresso-github"
+           revision="0c5ade3a83f8240697760fb340609922a4ec7086" clone-depth="1" />
+  <remove-project name="LineageOS/android_vendor_lineage" />
+  <project name="rINanDO/android_vendor_lineage" path="vendor/lineage" remote="espresso-github"
+           revision="2134160dae7d2719f2d68eae5db6f998f9e66348" clone-depth="1" />
+  <remove-project name="LineageOS/android_hardware_lineage_interfaces" />
+  <project name="rINanDO/android_hardware_lineage_interfaces" path="hardware/lineage/interfaces" remote="espresso-github"
+           revision="561e1681a82046b42a63c8400df8798cb44e8cc6" clone-depth="1" />
+  <remove-project name="LineageOS/android_hardware_lineage_compat" />
+  <project name="rINanDO/android_hardware_lineage_compat" path="hardware/lineage/compat" remote="espresso-github"
+           revision="39ddd3c587f1b56e41085b90fe991735e5bdf372" clone-depth="1" />
+  <remove-project name="LineageOS/android_packages_modules_adb" />
+  <project name="rINanDO/android_packages_modules_adb" path="packages/modules/adb" remote="espresso-github"
+           revision="2bf3f0fa945d400c57f6ebfe0b65d1526e85ae35" clone-depth="1" />
+  <remove-project name="platform/packages/modules/Bluetooth" />
+  <project name="rINanDO/android_packages_modules_Bluetooth" path="packages/modules/Bluetooth" remote="espresso-github"
+           revision="ec322f23840deecd15ebb54be4e212f6bfdeab53" clone-depth="1" />
+  <remove-project name="LineageOS/android_packages_modules_Connectivity" />
+  <project name="rINanDO/android_packages_modules_Connectivity" path="packages/modules/Connectivity" remote="espresso-github"
+           revision="2e19356af9c04e19c325d68af342a31c40c0ddcc" clone-depth="1" />
+  <remove-project name="platform/external/perfetto" />
+  <project name="rINanDO/android_external_perfetto" path="external/perfetto" remote="espresso-github"
+           revision="936b5cedbc900e2064af6e18a3379c0a8eb21bb4" clone-depth="1" />
+  <remove-project name="LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9" />
+  <project name="rINanDO/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" remote="espresso-github"
+           revision="0e7d16580dd5fb78734174d56887f1e681d0ee4a" clone-depth="1" />
+  <project name="MightyM17/proprietary_vendor_samsung" path="vendor/samsung" remote="espresso-github"
+           revision="13b176c69d0751b757bdc3e1a0c197b75b71e954" clone-depth="1" />
+  <project name="Unlegacy-Android/proprietary_vendor_ti" path="vendor/ti" remote="espresso-github"
+           revision="42872ce605cd719a85c58087321d2f8e078e26ba" clone-depth="1" />
+  <project name="Unlegacy-Android/android_external_stlport" path="external/stlport" remote="espresso-github"
+           revision="4baa325ccf755799857d2024cd553584eda76261" clone-depth="1" />
+  <project name="MightyM17/android_device_samsung_espressowifi-1" path="device/samsung/espressowifi" remote="espresso-github"
+           revision="cd4b4f937a9b1f3e06c7bee32cbeeac5bb256a82" clone-depth="1" />
+  <project name="MightyM17/android_hardware_ti_omap4" path="hardware/ti/omap4" remote="espresso-github"
+           revision="5b94712a01f97140663e74935281c7fb6883a295" clone-depth="1" />
+  <project name="MightyM17/android_kernel_ti_omap4" path="kernel/ti/omap4" remote="espresso-github"
+           revision="4f4a4b2427c5b09ec0442c0578957322ff4c7ca6" clone-depth="1" />
+  <project name="skb8/android_device_samsung_espresso3g-1"
+           path="device/samsung/espresso3g" remote="espresso-github"
+           revision="refs/heads/lineage-20.0-experimental" clone-depth="1" />
+</manifest>
+

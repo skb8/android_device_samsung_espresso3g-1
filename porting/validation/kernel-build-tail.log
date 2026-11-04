@@ -1,0 +1,18 @@
+  SYSMAP  System.map
+  SYSMAP  .tmp_System.map
+  OBJCOPY arch/arm/boot/Image
+  Kernel: arch/arm/boot/Image is ready
+  AS      arch/arm/boot/compressed/head.o
+  XZKERN  arch/arm/boot/compressed/piggy.xzkern
+  CC      arch/arm/boot/compressed/misc.o
+  CC      arch/arm/boot/compressed/decompress.o
+  CC      arch/arm/boot/compressed/string.o
+  SHIPPED arch/arm/boot/compressed/lib1funcs.S
+  SHIPPED arch/arm/boot/compressed/ashldi3.S
+  AS      arch/arm/boot/compressed/lib1funcs.o
+  AS      arch/arm/boot/compressed/ashldi3.o
+  AS      arch/arm/boot/compressed/piggy.xzkern.o
+  LD      arch/arm/boot/compressed/vmlinux
+  OBJCOPY arch/arm/boot/zImage
+  Kernel: arch/arm/boot/zImage is ready
+make: Leaving directory '/workspace/scratch/398f95fc335c/kernel-omap4'

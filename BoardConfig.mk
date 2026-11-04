@@ -17,6 +17,15 @@
 # Include common espresso BoardConfig
 include device/samsung/espressowifi/BoardConfigCommon.mk
 
+# The OMAP kernel still uses GCC. Do not inherit the modern Clang default.
+TARGET_KERNEL_CLANG_COMPILE := false
+
+# No memfd_create implementation was found in the pinned OMAP kernel.
+# This flag must only become true after adding and verifying that backport.
+TARGET_HAS_MEMFD_BACKPORT := false
+
+TARGET_SYSTEM_PROP += device/samsung/espresso3g/system.prop
+
 # assert
 TARGET_OTA_ASSERT_DEVICE := espresso3g,espresso-common,p3100,GT-P3100,espressorf,espressorfxx,p5100,GT-P5100,espresso10rf,espresso10rfxx
 

@@ -30,6 +30,10 @@ $(call inherit-product, device/samsung/espresso3g/aosp_espresso3g.mk)
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := lineage_espresso3g
 
+# Start with the existing kernel LMK; espresso has no PSI backport.
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.lmk.use_psi=false
+
 # Device build info and fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=espresso10rfxx \

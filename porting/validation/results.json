@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-04",
+  "android_rom": "not_built",
+  "android_attempt": {
+    "stage": "source_preflight",
+    "exit_code": 2,
+    "reason": "Full Android source checkout missing: build/envsetup.sh",
+    "lunch_executed": false,
+    "android_compilation_started": false,
+    "full_repo_sync_attempted": false
+  },
+  "kernel_baseline": {
+    "result": "zImage_built",
+    "version": "3.4.112",
+    "source": "MightyM17/android_kernel_ti_omap4",
+    "revision": "4f4a4b2427c5b09ec0442c0578957322ff4c7ca6",
+    "config": "espresso_defconfig",
+    "compiler_source": "rINanDO/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9",
+    "compiler_revision": "0e7d16580dd5fb78734174d56887f1e681d0ee4a",
+    "host_adjustments": [
+      "Compiler Python wrapper shebang changed locally to /usr/bin/env python3",
+      "TMPDIR set to a writable existing directory"
+    ],
+    "kernel_source_modified": false,
+    "zImage_sha256": "e15d9290f601df32cd4bd784921923b77aa7f53f962091813ef51c90bb20ece3",
+    "boot_img_created": false,
+    "device_boot_tested": false,
+    "android13_compatibility_tested": false
+  },
+  "static_checks": [
+    "Manifest XML and lock JSON parsed",
+    "29 unique manifest project paths",
+    "28 pinned dependencies match lock file",
+    "build/make and build/soong linkfiles retained",
+    "Shell syntax checked",
+    "git diff --check passed"
+  ]
+}
