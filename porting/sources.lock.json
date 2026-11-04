@@ -195,6 +195,16 @@
       "sha": "4f4a4b2427c5b09ec0442c0578957322ff4c7ca6",
       "path": "kernel/ti/omap4",
       "replaces": null
+    },
+    {
+      "repo": "platform/build/blueprint",
+      "path": "build/blueprint",
+      "remote": "aosp",
+      "sha": "ca8f0e8e3571c866d69d34cbd47b3989abe8e8cd",
+      "upstream": "refs/tags/android-13.0.0_r75",
+      "replaces": "platform/build/blueprint",
+      "message": "Android 13 r75 Blueprint; provides Context.AddIncludeTags",
+      "evidence_url": "https://github.com/aosp-mirror-neo/platform_build_blueprint/blob/ca8f0e8e3571c866d69d34cbd47b3989abe8e8cd/context.go"
     }
   ]
 }

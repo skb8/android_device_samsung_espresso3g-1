@@ -2,6 +2,11 @@
 <!-- Experimental source composition; not a known-working ROM manifest. -->
 <manifest>
   <remote name="espresso-github" fetch="https://github.com/" />
+  <!-- Match Blueprint to the Android 13 r75 cohort used by upstream Soong. -->
+  <remove-project name="platform/build/blueprint" />
+  <project name="platform/build/blueprint" path="build/blueprint" remote="aosp"
+           revision="ca8f0e8e3571c866d69d34cbd47b3989abe8e8cd"
+           upstream="refs/tags/android-13.0.0_r75" clone-depth="1" />
   <remove-project name="LineageOS/android_build" />
   <project name="rINanDO/android_build" path="build/make" remote="espresso-github"
            revision="876d5617a2461cc73049e175a1e29e41fbdcb7e2" clone-depth="1">

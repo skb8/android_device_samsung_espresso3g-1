@@ -64,6 +64,15 @@ Runner сохраняет out/espresso-port-logs/build.log; pipefail сохра�
 
 ## Оставшаяся работа
 
+Следующий bootstrap после замены Soong показал отсутствие AddIncludeTags в
+старом Blueprint (android-13.0.0_r13). Теперь build/blueprint закреплён на SHA
+ca8f0e8e3571c866d69d34cbd47b3989abe8e8cd из android-13.0.0_r75 — тега,
+используемого официальным manifest LineageOS 20 для AOSP-проектов. Наличие
+метода AddIncludeTags проверено в context.go этого коммита. Репозиторий и remote
+Blueprint остаются прежними (platform/build/blueprint, aosp), меняется revision.
+После обновления local manifest нужен целевой repo sync build/blueprint.
+Полный запуск bootstrap с этой комбинацией ещё не проверен локально.
+
 После bootstrap Soong пользовательская сборка обнаружила несовместимые свойства
 `upstream` и `soong_config_variables.*.export_cflags`. В исходном manifest был
 закреплён старый форк rINanDO/build_soong, тогда как часть базовых проектов
