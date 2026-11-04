@@ -13,8 +13,8 @@
     <linkfile src="tools" dest="build/tools" />
   </project>
   <remove-project name="LineageOS/android_build_soong" />
-  <project name="rINanDO/android_build_soong" path="build/soong" remote="espresso-github"
-           revision="0b04890e6289f030aa69ddc14dbfb93195863512" clone-depth="1">
+  <project name="LineageOS/android_build_soong" path="build/soong" remote="espresso-github"
+           revision="c80e6e3b82f2c0fded69b44b514d4c4d5519c9b5" clone-depth="1">
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>

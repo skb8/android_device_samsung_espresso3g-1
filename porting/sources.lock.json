@@ -14,9 +14,9 @@
       "replaces": "LineageOS/android_build"
     },
     {
-      "repo": "rINanDO/android_build_soong",
-      "sha": "0b04890e6289f030aa69ddc14dbfb93195863512",
-      "message": "DNM comment out nested class loader checks\n\nChange-Id: Ib7d6795ae6a21dba67bc2da12e9991d9aeab0c40",
+      "repo": "LineageOS/android_build_soong",
+      "sha": "c80e6e3b82f2c0fded69b44b514d4c4d5519c9b5",
+      "message": "Merge tag 'android-security-13.0.0_r18' into staging/lineage-20.0_android-security-13.0.0_r18\n\nAndroid Security 13.0.0 Release 18 (11698590)\n\n* tag 'android-security-13.0.0_r18':\n  java_sdk_library_import: Copy all prebuilt properties to child modules\n  Expose avb_hash_algorithm as a property.\n\nChange-Id: I2013d84c682b3c6e6e719267c894385d8bf64b11",
       "path": "build/soong",
       "replaces": "LineageOS/android_build_soong"
     },
@@ -198,4 +198,3 @@
     }
   ]
 }
-

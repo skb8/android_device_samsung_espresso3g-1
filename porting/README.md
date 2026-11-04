@@ -64,6 +64,17 @@ Runner сохраняет out/espresso-port-logs/build.log; pipefail сохра�
 
 ## Оставшаяся работа
 
+После bootstrap Soong пользовательская сборка обнаружила несовместимые свойства
+`upstream` и `soong_config_variables.*.export_cflags`. В исходном manifest был
+закреплён старый форк rINanDO/build_soong, тогда как часть базовых проектов
+скачивалась из более новой lineage-20.0. Для build/soong теперь выбран
+LineageOS/android_build_soong, SHA c80e6e3b82f2c0fded69b44b514d4c4d5519c9b5:
+в java/robolectric.go есть Upstream, в cc/library.go — Export_cflags.
+После обновления device tree скопировать обновлённый local manifest в
+.repo/local_manifests/espresso.xml и выполнить целевой repo sync build/soong.
+Android.bp тестов и vendor/lineage ради обхода ошибок не меняются. Новая
+композиция пока не проверена полным пользовательским запуском Soong.
+
 Первый запуск на пользовательской машине после успешного repo sync дошёл до
 dumpvars и остановился на `BOARD_USE_TI_LIBION: export is obsolete`.
 Патч 0002 удаляет устаревший export, сохраняя значение переменной, и убирает
