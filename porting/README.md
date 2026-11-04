@@ -46,7 +46,7 @@ roomservice не скачивал старые зависимости из не�
 Получить bootstrap отдельно от Android checkout:
 
 ```bash
-git clone -b lineage-20.0-experimental \
+git clone -b lineage-20.0 \
   https://github.com/skb8/android_device_samsung_espresso3g-1.git espresso-bootstrap
 mkdir android-espresso20
 cd android-espresso20

@@ -117,6 +117,6 @@
            revision="4f4a4b2427c5b09ec0442c0578957322ff4c7ca6" clone-depth="1" />
   <project name="skb8/android_device_samsung_espresso3g-1"
            path="device/samsung/espresso3g" remote="espresso-github"
-           revision="refs/heads/lineage-20.0-experimental" clone-depth="1" />
+           revision="refs/heads/lineage-20.0" clone-depth="1" />
 </manifest>
 
