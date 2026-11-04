@@ -64,6 +64,14 @@ Runner сохраняет out/espresso-port-logs/build.log; pipefail сохра�
 
 ## Оставшаяся работа
 
+Первый запуск на пользовательской машине после успешного repo sync дошёл до
+dumpvars и остановился на `BOARD_USE_TI_LIBION: export is obsolete`.
+Патч 0002 удаляет устаревший export, сохраняя значение переменной, и убирает
+вызов add_lunch_combo из общего vendorsetup.sh. Применение и повторный запуск
+патча проверены; повторный Android dumpvars ожидается на машине пользователя.
+Сообщение roomservice `Device espresso3g not found` после этой ошибки было
+следствием неуспешного dumpvars, а не отсутствующего device tree.
+
 1. Общий espressowifi и TI hardware пока из Android 9. Проверить/обновить
    пакеты, include-пути, HAL, XML audio policy, VINTF и SELinux.
 2. PowerVR: gralloc, HWC, EGL/GLES и синхронизация буферов. Exynos/Mali от S2

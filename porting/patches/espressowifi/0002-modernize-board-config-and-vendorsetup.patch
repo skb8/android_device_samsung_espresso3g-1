@@ -1,0 +1,21 @@
+diff --git a/BoardConfigCommon.mk b/BoardConfigCommon.mk
+index 855765e..e188f21 100644
+--- a/BoardConfigCommon.mk
++++ b/BoardConfigCommon.mk
+@@ -46,7 +46,7 @@ TARGET_USES_LEGACY_ADB_INTERFACE := true
+ ifneq (,$(strip $(wildcard \
+ $(TARGET_KERNEL_SOURCE)/drivers/gpu/ion/ion_page_pool.c \
+ $(TARGET_KERNEL_SOURCE)/drivers/staging/android/ion/ion_page_pool.c)))
+-export BOARD_USE_TI_LIBION := false
++BOARD_USE_TI_LIBION := false
+ endif
+ 
+ USE_AMAZON_DUCATI := $(if $(shell grep ^CONFIG_USE_AMAZON_DUCATI=y$$ \
+diff --git a/vendorsetup.sh b/vendorsetup.sh
+index c2cee46..7432edd 100644
+--- a/vendorsetup.sh
++++ b/vendorsetup.sh
+@@ -1 +1,2 @@
+-add_lunch_combo lineage_espressowifi-userdebug
++# Product registration belongs in AndroidProducts.mk on modern Android.
++# This shared tree is used by the espresso3g bring-up; do not register Wi-Fi here.
